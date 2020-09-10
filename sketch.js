@@ -9,6 +9,7 @@ const world = engine.world;
 //Variables
 var bubble1, bubble2;
 var topEdge, bottomEdge, leftEdge, rightEdge;
+var score = 0;
 var colour = [0, 0, 0];
 
 function setup() {
@@ -37,6 +38,11 @@ function draw() {
 	//Background
 	background(colour);
 
+	//Score
+	fill("white");
+	textSize(20);
+	text("Score : " + score, 50, 50);
+
 	/*DETECT COLLISION*/
 	detectCollision(bubble1, bubble2);
 
@@ -63,6 +69,8 @@ function detectCollision(body1, body2){
 		colour[0] = random(0, 255);
 		colour[1] = random(0, 255);
 		colour[2] = random(0, 255);
+
+		score++;
 	}
 }
 
